@@ -3,8 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Red Light Rejuve - Professional LED Light Therapy Masks | Australia</title>
-    <meta name="description" content="Clinical-grade red light therapy masks for visible anti-aging results at home. Comfortable fit, proven results, 60-day money-back guarantee. Australian owned.">
+    <title>LED Light Therapy Face Mask | Red Light Rejuve Australia</title>
+    <meta name="description" content="Clinical-grade LED face mask with red + near-infrared light therapy. Reduce wrinkles, boost collagen, improve skin tone. 60-day guarantee. Free AU shipping.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -14,34 +17,65 @@
 
         :root {
             --primary: #8B2635;
-            --primary-light: #C4454A;
-            --secondary: #1a1a2e;
-            --accent: #FFD700;
-            --text: #333;
-            --text-light: #666;
-            --bg-light: #faf9f7;
-            --white: #fff;
+            --primary-dark: #6d1e2a;
+            --primary-light: #a93342;
+            --secondary: #111827;
+            --accent: #D4AF37;
+            --success: #059669;
+            --text: #1f2937;
+            --text-secondary: #6b7280;
+            --text-light: #9ca3af;
+            --border: #e5e7eb;
+            --bg: #ffffff;
+            --bg-secondary: #f9fafb;
+            --bg-tertiary: #f3f4f6;
+            --radius: 12px;
+            --radius-lg: 16px;
+            --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
+            --shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+            --shadow-lg: 0 10px 25px -5px rgba(0,0,0,0.1);
+            --transition: all 0.2s ease;
+        }
+
+        html {
+            scroll-behavior: smooth;
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
             line-height: 1.6;
             color: var(--text);
+            background: var(--bg);
+            -webkit-font-smoothing: antialiased;
         }
 
-        /* Header/Navigation */
+        /* Announcement Bar */
+        .announcement-bar {
+            background: var(--secondary);
+            color: white;
+            padding: 0.625rem 1rem;
+            text-align: center;
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+
+        .announcement-bar a {
+            color: var(--accent);
+            text-decoration: underline;
+        }
+
+        /* Header */
         header {
-            background: var(--white);
-            padding: 1rem 2rem;
-            position: fixed;
-            width: 100%;
+            background: var(--bg);
+            padding: 1rem 1.5rem;
+            position: sticky;
             top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            z-index: 100;
+            border-bottom: 1px solid var(--border);
         }
 
         nav {
-            max-width: 1200px;
+            max-width: 1280px;
             margin: 0 auto;
             display: flex;
             justify-content: space-between;
@@ -49,493 +83,736 @@
         }
 
         .logo {
-            font-size: 1.5rem;
+            font-size: 1.25rem;
             font-weight: 700;
-            color: var(--primary);
-            text-decoration: none;
-        }
-
-        .logo span {
             color: var(--secondary);
-        }
-
-        .nav-cta {
-            background: var(--primary);
-            color: var(--white);
-            padding: 0.75rem 1.5rem;
-            border-radius: 25px;
             text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s ease;
-        }
-
-        .nav-cta:hover {
-            background: var(--primary-light);
-            transform: translateY(-2px);
-        }
-
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(135deg, var(--secondary) 0%, #2d2d4a 100%);
-            min-height: 100vh;
             display: flex;
             align-items: center;
-            padding: 120px 2rem 80px;
+            gap: 0.5rem;
+        }
+
+        .logo-icon {
+            width: 32px;
+            height: 32px;
+            background: var(--primary);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logo-icon svg {
+            width: 20px;
+            height: 20px;
+            color: white;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.9375rem;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover {
+            color: var(--text);
+        }
+
+        .nav-cart {
             position: relative;
-            overflow: hidden;
+            color: var(--text);
         }
 
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 50%;
-            height: 100%;
-            background: radial-gradient(circle at center, rgba(139, 38, 53, 0.3) 0%, transparent 70%);
+        .nav-cart svg {
+            width: 24px;
+            height: 24px;
         }
 
-        .hero-content {
-            max-width: 1200px;
+        /* Product Section */
+        .product-section {
+            max-width: 1280px;
             margin: 0 auto;
+            padding: 2rem 1.5rem 4rem;
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 4rem;
-            align-items: center;
+            align-items: start;
         }
 
-        .hero-text {
-            color: var(--white);
-            position: relative;
-            z-index: 1;
+        /* Product Gallery */
+        .product-gallery {
+            position: sticky;
+            top: 100px;
         }
 
-        .hero-badge {
-            display: inline-block;
-            background: rgba(255,215,0,0.15);
-            color: var(--accent);
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
-            font-size: 0.875rem;
-            font-weight: 600;
-            margin-bottom: 1.5rem;
-            border: 1px solid rgba(255,215,0,0.3);
-        }
-
-        .hero h1 {
-            font-size: 3rem;
-            line-height: 1.2;
-            margin-bottom: 1.5rem;
-            font-weight: 700;
-        }
-
-        .hero h1 span {
-            color: var(--primary-light);
-        }
-
-        .hero-subtitle {
-            font-size: 1.25rem;
-            color: rgba(255,255,255,0.8);
-            margin-bottom: 2rem;
-            max-width: 500px;
-        }
-
-        .hero-features {
-            display: flex;
-            gap: 2rem;
-            margin-bottom: 2.5rem;
-        }
-
-        .hero-feature {
+        .main-image {
+            background: var(--bg-secondary);
+            border-radius: var(--radius-lg);
+            aspect-ratio: 1;
             display: flex;
             align-items: center;
+            justify-content: center;
+            margin-bottom: 1rem;
+            overflow: hidden;
+            border: 1px solid var(--border);
+        }
+
+        .main-image-placeholder {
+            text-align: center;
+            color: var(--text-light);
+            padding: 2rem;
+        }
+
+        .main-image-placeholder svg {
+            width: 80px;
+            height: 80px;
+            margin-bottom: 1rem;
+            opacity: 0.5;
+        }
+
+        .thumbnail-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 0.75rem;
+        }
+
+        .thumbnail {
+            aspect-ratio: 1;
+            background: var(--bg-secondary);
+            border-radius: var(--radius);
+            border: 2px solid transparent;
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.75rem;
+            color: var(--text-light);
+        }
+
+        .thumbnail:hover, .thumbnail.active {
+            border-color: var(--primary);
+        }
+
+        /* Product Info */
+        .product-info {
+            padding-top: 0.5rem;
+        }
+
+        .product-badges {
+            display: flex;
             gap: 0.5rem;
-            font-size: 0.9rem;
-            color: rgba(255,255,255,0.9);
-        }
-
-        .hero-feature svg {
-            width: 20px;
-            height: 20px;
-            color: var(--accent);
-        }
-
-        .cta-group {
-            display: flex;
-            gap: 1rem;
+            margin-bottom: 1rem;
             flex-wrap: wrap;
         }
 
-        .btn-primary {
-            background: var(--primary);
-            color: var(--white);
-            padding: 1rem 2rem;
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1.1rem;
+        .badge {
             display: inline-flex;
             align-items: center;
-            gap: 0.5rem;
-            transition: all 0.3s ease;
-            border: none;
-            cursor: pointer;
-        }
-
-        .btn-primary:hover {
-            background: var(--primary-light);
-            transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(139, 38, 53, 0.4);
-        }
-
-        .btn-secondary {
-            background: transparent;
-            color: var(--white);
-            padding: 1rem 2rem;
-            border-radius: 30px;
-            text-decoration: none;
+            gap: 0.375rem;
+            padding: 0.375rem 0.75rem;
+            border-radius: 100px;
+            font-size: 0.75rem;
             font-weight: 600;
-            border: 2px solid rgba(255,255,255,0.3);
-            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.025em;
         }
 
-        .btn-secondary:hover {
-            border-color: var(--white);
-            background: rgba(255,255,255,0.1);
+        .badge-bestseller {
+            background: var(--accent);
+            color: var(--secondary);
         }
 
-        .hero-image {
-            position: relative;
-            z-index: 1;
+        .badge-tga {
+            background: var(--bg-tertiary);
+            color: var(--text-secondary);
         }
 
-        .hero-image-placeholder {
-            background: linear-gradient(145deg, rgba(139, 38, 53, 0.2), rgba(139, 38, 53, 0.1));
-            border-radius: 20px;
-            padding: 3rem;
-            text-align: center;
-            border: 1px solid rgba(255,255,255,0.1);
+        .badge svg {
+            width: 14px;
+            height: 14px;
         }
 
-        .hero-image-placeholder p {
-            color: rgba(255,255,255,0.6);
-            font-size: 0.9rem;
+        .product-title {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--secondary);
+            line-height: 1.2;
+            margin-bottom: 0.75rem;
         }
 
-        /* Trust Bar */
-        .trust-bar {
-            background: var(--white);
-            padding: 2rem;
-            border-bottom: 1px solid #eee;
-        }
-
-        .trust-bar-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 3rem;
-            flex-wrap: wrap;
-        }
-
-        .trust-item {
+        .product-rating {
             display: flex;
             align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .stars {
+            color: var(--accent);
+            font-size: 1rem;
+            letter-spacing: 1px;
+        }
+
+        .rating-text {
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+        }
+
+        .rating-text a {
+            color: var(--primary);
+            text-decoration: underline;
+        }
+
+        .product-price {
+            display: flex;
+            align-items: baseline;
             gap: 0.75rem;
-            color: var(--text-light);
-            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
         }
 
-        .trust-item svg {
+        .price-current {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--secondary);
+        }
+
+        .price-compare {
+            font-size: 1.25rem;
+            color: var(--text-light);
+            text-decoration: line-through;
+        }
+
+        .price-save {
+            background: #fef2f2;
+            color: #dc2626;
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.8125rem;
+            font-weight: 600;
+        }
+
+        .afterpay-message {
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+        }
+
+        .afterpay-message strong {
+            color: var(--text);
+        }
+
+        .product-description {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            font-size: 0.9375rem;
+            line-height: 1.7;
+        }
+
+        /* Key Benefits */
+        .key-benefits {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.75rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .key-benefit {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.875rem;
+            color: var(--text);
+        }
+
+        .key-benefit svg {
+            width: 18px;
+            height: 18px;
+            color: var(--success);
+            flex-shrink: 0;
+        }
+
+        /* Add to Cart */
+        .add-to-cart-section {
+            background: var(--bg-secondary);
+            border-radius: var(--radius-lg);
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border: 1px solid var(--border);
+        }
+
+        .quantity-selector {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .quantity-label {
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: var(--text);
+        }
+
+        .quantity-controls {
+            display: flex;
+            align-items: center;
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            background: var(--bg);
+        }
+
+        .quantity-btn {
+            width: 40px;
+            height: 40px;
+            border: none;
+            background: none;
+            cursor: pointer;
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            transition: var(--transition);
+        }
+
+        .quantity-btn:hover {
+            color: var(--text);
+            background: var(--bg-tertiary);
+        }
+
+        .quantity-value {
+            width: 48px;
+            text-align: center;
+            font-weight: 600;
+            font-size: 1rem;
+            border: none;
+            background: none;
+        }
+
+        .btn-add-to-cart {
+            width: 100%;
+            padding: 1rem 2rem;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: var(--radius);
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .btn-add-to-cart:hover {
+            background: var(--primary-dark);
+            transform: translateY(-1px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .btn-add-to-cart svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        /* Trust Signals */
+        .trust-signals {
+            display: flex;
+            justify-content: space-between;
+            padding: 1rem 0;
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 1.5rem;
+        }
+
+        .trust-signal {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.375rem;
+            text-align: center;
+        }
+
+        .trust-signal svg {
             width: 24px;
             height: 24px;
             color: var(--primary);
         }
 
-        /* Problem Section */
-        .problem-section {
-            background: var(--bg-light);
-            padding: 5rem 2rem;
+        .trust-signal span {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            font-weight: 500;
         }
 
-        .section-container {
-            max-width: 1200px;
+        /* Product Accordion */
+        .product-accordion {
+            border-top: 1px solid var(--border);
+        }
+
+        .accordion-item {
+            border-bottom: 1px solid var(--border);
+        }
+
+        .accordion-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.9375rem;
+            color: var(--text);
+        }
+
+        .accordion-header svg {
+            width: 20px;
+            height: 20px;
+            color: var(--text-secondary);
+            transition: transform 0.3s ease;
+        }
+
+        .accordion-item.open .accordion-header svg {
+            transform: rotate(180deg);
+        }
+
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .accordion-item.open .accordion-content {
+            max-height: 500px;
+        }
+
+        .accordion-body {
+            padding-bottom: 1rem;
+            color: var(--text-secondary);
+            font-size: 0.9375rem;
+            line-height: 1.7;
+        }
+
+        .accordion-body ul {
+            margin-left: 1.25rem;
+            margin-top: 0.5rem;
+        }
+
+        .accordion-body li {
+            margin-bottom: 0.375rem;
+        }
+
+        /* Results Section */
+        .results-section {
+            background: var(--bg-secondary);
+            padding: 5rem 1.5rem;
+        }
+
+        .results-container {
+            max-width: 1280px;
             margin: 0 auto;
         }
 
         .section-header {
             text-align: center;
-            margin-bottom: 4rem;
+            margin-bottom: 3rem;
         }
 
-        .section-tag {
-            display: inline-block;
-            background: rgba(139, 38, 53, 0.1);
-            color: var(--primary);
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
-            font-size: 0.875rem;
+        .section-eyebrow {
+            font-size: 0.8125rem;
             font-weight: 600;
-            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--primary);
+            margin-bottom: 0.75rem;
         }
 
-        .section-header h2 {
-            font-size: 2.5rem;
+        .section-title {
+            font-size: 2.25rem;
+            font-weight: 700;
             color: var(--secondary);
             margin-bottom: 1rem;
         }
 
-        .section-header p {
-            font-size: 1.1rem;
-            color: var(--text-light);
+        .section-subtitle {
+            font-size: 1.0625rem;
+            color: var(--text-secondary);
             max-width: 600px;
             margin: 0 auto;
         }
 
-        .pain-points {
+        .results-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(3, 1fr);
             gap: 2rem;
         }
 
-        .pain-card {
-            background: var(--white);
-            padding: 2rem;
-            border-radius: 16px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
-            border-left: 4px solid var(--primary);
+        .result-card {
+            background: var(--bg);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
         }
 
-        .pain-card h3 {
-            color: var(--secondary);
-            margin-bottom: 0.75rem;
-            font-size: 1.1rem;
+        .result-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
         }
 
-        .pain-card p {
-            color: var(--text-light);
-            font-size: 0.95rem;
-            font-style: italic;
-        }
-
-        .pain-card .quote-source {
-            margin-top: 1rem;
-            font-size: 0.8rem;
-            color: #999;
-            font-style: normal;
-        }
-
-        /* Solution Section */
-        .solution-section {
-            padding: 5rem 2rem;
-            background: var(--white);
-        }
-
-        .solution-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
-        }
-
-        .solution-content h2 {
-            font-size: 2.25rem;
-            color: var(--secondary);
-            margin-bottom: 1.5rem;
-        }
-
-        .solution-content h2 span {
-            color: var(--primary);
-        }
-
-        .solution-content > p {
-            color: var(--text-light);
-            margin-bottom: 2rem;
-            font-size: 1.1rem;
-        }
-
-        .solution-features {
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
-        }
-
-        .solution-feature {
-            display: flex;
-            gap: 1rem;
-        }
-
-        .feature-icon {
-            width: 48px;
-            height: 48px;
-            background: rgba(139, 38, 53, 0.1);
-            border-radius: 12px;
+        .result-image {
+            aspect-ratio: 4/3;
+            background: var(--bg-tertiary);
             display: flex;
             align-items: center;
             justify-content: center;
-            flex-shrink: 0;
+            color: var(--text-light);
+            font-size: 0.875rem;
         }
 
-        .feature-icon svg {
-            width: 24px;
-            height: 24px;
+        .result-content {
+            padding: 1.5rem;
+        }
+
+        .result-stat {
+            font-size: 2rem;
+            font-weight: 700;
             color: var(--primary);
-        }
-
-        .feature-text h4 {
-            color: var(--secondary);
             margin-bottom: 0.25rem;
         }
 
-        .feature-text p {
-            color: var(--text-light);
-            font-size: 0.9rem;
+        .result-label {
+            font-size: 0.9375rem;
+            color: var(--text-secondary);
+            margin-bottom: 0.75rem;
         }
 
-        .solution-image {
-            background: linear-gradient(145deg, var(--bg-light), #f0eeeb);
-            border-radius: 20px;
-            padding: 3rem;
-            text-align: center;
+        .result-quote {
+            font-size: 0.875rem;
+            color: var(--text);
+            font-style: italic;
+            line-height: 1.6;
         }
 
-        /* Benefits Section */
-        .benefits-section {
-            background: var(--secondary);
-            padding: 5rem 2rem;
-            color: var(--white);
+        /* How It Works */
+        .how-section {
+            padding: 5rem 1.5rem;
+            background: var(--bg);
         }
 
-        .benefits-section .section-header h2 {
-            color: var(--white);
+        .how-container {
+            max-width: 1280px;
+            margin: 0 auto;
         }
 
-        .benefits-section .section-header p {
-            color: rgba(255,255,255,0.7);
-        }
-
-        .benefits-grid {
+        .how-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(4, 1fr);
             gap: 2rem;
         }
 
-        .benefit-card {
-            background: rgba(255,255,255,0.05);
-            border: 1px solid rgba(255,255,255,0.1);
-            border-radius: 16px;
-            padding: 2rem;
+        .how-step {
             text-align: center;
-            transition: all 0.3s ease;
         }
 
-        .benefit-card:hover {
-            background: rgba(255,255,255,0.1);
-            transform: translateY(-5px);
-        }
-
-        .benefit-icon {
-            width: 64px;
-            height: 64px;
-            background: rgba(139, 38, 53, 0.3);
+        .step-number {
+            width: 48px;
+            height: 48px;
+            background: var(--primary);
+            color: white;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 0 auto 1.5rem;
-        }
-
-        .benefit-icon svg {
-            width: 32px;
-            height: 32px;
-            color: var(--primary-light);
-        }
-
-        .benefit-card h3 {
-            margin-bottom: 0.75rem;
+            font-weight: 700;
             font-size: 1.25rem;
+            margin: 0 auto 1rem;
         }
 
-        .benefit-card p {
+        .step-title {
+            font-weight: 600;
+            font-size: 1rem;
+            color: var(--secondary);
+            margin-bottom: 0.5rem;
+        }
+
+        .step-desc {
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        /* Testimonials */
+        .testimonials-section {
+            padding: 5rem 1.5rem;
+            background: var(--secondary);
+            color: white;
+        }
+
+        .testimonials-container {
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+
+        .testimonials-section .section-eyebrow {
+            color: var(--accent);
+        }
+
+        .testimonials-section .section-title {
+            color: white;
+        }
+
+        .testimonials-section .section-subtitle {
             color: rgba(255,255,255,0.7);
-            font-size: 0.95rem;
-        }
-
-        /* Social Proof Section */
-        .social-proof {
-            padding: 5rem 2rem;
-            background: var(--bg-light);
         }
 
         .testimonials-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
         }
 
         .testimonial-card {
-            background: var(--white);
-            padding: 2rem;
-            border-radius: 16px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: var(--radius-lg);
+            padding: 1.5rem;
         }
 
         .testimonial-stars {
             color: var(--accent);
             margin-bottom: 1rem;
-            font-size: 1.25rem;
+            font-size: 1rem;
+            letter-spacing: 2px;
         }
 
         .testimonial-text {
-            color: var(--text);
-            margin-bottom: 1.5rem;
-            font-size: 1rem;
+            font-size: 0.9375rem;
             line-height: 1.7;
+            margin-bottom: 1.25rem;
+            color: rgba(255,255,255,0.9);
         }
 
         .testimonial-author {
             display: flex;
             align-items: center;
-            gap: 1rem;
+            gap: 0.75rem;
         }
 
         .author-avatar {
-            width: 48px;
-            height: 48px;
+            width: 40px;
+            height: 40px;
             background: var(--primary);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: var(--white);
             font-weight: 600;
+            font-size: 0.875rem;
         }
 
-        .author-info h4 {
-            color: var(--secondary);
-            font-size: 0.95rem;
+        .author-name {
+            font-weight: 600;
+            font-size: 0.875rem;
         }
 
-        .author-info p {
-            color: var(--text-light);
-            font-size: 0.85rem;
+        .author-meta {
+            font-size: 0.8125rem;
+            color: rgba(255,255,255,0.6);
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            padding: 5rem 1.5rem;
+            background: var(--bg-secondary);
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-list {
+            margin-top: 3rem;
+        }
+
+        .faq-item {
+            background: var(--bg);
+            border-radius: var(--radius);
+            margin-bottom: 0.75rem;
+            border: 1px solid var(--border);
+            overflow: hidden;
+        }
+
+        .faq-question {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.25rem 1.5rem;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 1rem;
+            color: var(--text);
+            transition: var(--transition);
+        }
+
+        .faq-question:hover {
+            background: var(--bg-secondary);
+        }
+
+        .faq-question svg {
+            width: 20px;
+            height: 20px;
+            color: var(--text-secondary);
+            transition: transform 0.3s ease;
+            flex-shrink: 0;
+        }
+
+        .faq-item.open .faq-question svg {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .faq-item.open .faq-answer {
+            max-height: 300px;
+        }
+
+        .faq-answer-content {
+            padding: 0 1.5rem 1.25rem;
+            color: var(--text-secondary);
+            line-height: 1.7;
         }
 
         /* Guarantee Section */
         .guarantee-section {
-            padding: 5rem 2rem;
-            background: var(--white);
+            padding: 5rem 1.5rem;
+            background: var(--bg);
+        }
+
+        .guarantee-container {
+            max-width: 800px;
+            margin: 0 auto;
         }
 
         .guarantee-box {
-            max-width: 800px;
-            margin: 0 auto;
-            background: linear-gradient(135deg, var(--secondary) 0%, #2d2d4a 100%);
-            border-radius: 24px;
-            padding: 4rem;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            border-radius: var(--radius-lg);
+            padding: 3rem;
             text-align: center;
-            color: var(--white);
+            color: white;
             position: relative;
             overflow: hidden;
         }
@@ -544,10 +821,10 @@
             content: '';
             position: absolute;
             top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(139, 38, 53, 0.2) 0%, transparent 50%);
+            right: -50%;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 60%);
         }
 
         .guarantee-content {
@@ -556,89 +833,148 @@
         }
 
         .guarantee-badge {
-            width: 80px;
-            height: 80px;
+            width: 64px;
+            height: 64px;
             background: var(--accent);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 0 auto 2rem;
-            font-size: 2rem;
+            margin: 0 auto 1.5rem;
         }
 
-        .guarantee-box h2 {
-            font-size: 2rem;
-            margin-bottom: 1rem;
+        .guarantee-badge svg {
+            width: 32px;
+            height: 32px;
+            color: var(--secondary);
         }
 
-        .guarantee-box p {
-            color: rgba(255,255,255,0.8);
+        .guarantee-title {
+            font-size: 1.75rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+        }
+
+        .guarantee-text {
+            font-size: 1rem;
+            opacity: 0.9;
             max-width: 500px;
-            margin: 0 auto 2rem;
+            margin: 0 auto 1.5rem;
+            line-height: 1.7;
         }
 
-        /* CTA Section */
-        .cta-section {
-            padding: 5rem 2rem;
-            background: var(--primary);
+        .btn-guarantee {
+            background: white;
+            color: var(--primary);
+            padding: 0.875rem 2rem;
+            border-radius: var(--radius);
+            font-weight: 600;
+            font-size: 1rem;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: var(--transition);
+        }
+
+        .btn-guarantee:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        }
+
+        /* Email Capture */
+        .email-section {
+            padding: 4rem 1.5rem;
+            background: var(--bg-tertiary);
+        }
+
+        .email-container {
+            max-width: 600px;
+            margin: 0 auto;
             text-align: center;
         }
 
-        .cta-section h2 {
-            color: var(--white);
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
+        .email-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--secondary);
+            margin-bottom: 0.5rem;
         }
 
-        .cta-section p {
-            color: rgba(255,255,255,0.9);
-            font-size: 1.1rem;
-            margin-bottom: 2rem;
-            max-width: 500px;
-            margin-left: auto;
-            margin-right: auto;
+        .email-subtitle {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
         }
 
-        .cta-section .btn-primary {
-            background: var(--white);
-            color: var(--primary);
+        .email-form {
+            display: flex;
+            gap: 0.75rem;
+            max-width: 450px;
+            margin: 0 auto;
         }
 
-        .cta-section .btn-primary:hover {
-            background: var(--bg-light);
+        .email-input {
+            flex: 1;
+            padding: 0.875rem 1rem;
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            font-size: 1rem;
+            background: var(--bg);
+        }
+
+        .email-input:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        .email-btn {
+            padding: 0.875rem 1.5rem;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: var(--radius);
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            white-space: nowrap;
+        }
+
+        .email-btn:hover {
+            background: var(--primary-dark);
         }
 
         /* Footer */
         footer {
             background: var(--secondary);
-            color: var(--white);
-            padding: 4rem 2rem 2rem;
+            color: white;
+            padding: 4rem 1.5rem 2rem;
         }
 
-        .footer-content {
-            max-width: 1200px;
+        .footer-container {
+            max-width: 1280px;
             margin: 0 auto;
+        }
+
+        .footer-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-template-columns: 2fr 1fr 1fr 1fr;
             gap: 3rem;
             margin-bottom: 3rem;
         }
 
-        .footer-brand .logo {
-            color: var(--white);
-            margin-bottom: 1rem;
-            display: block;
-        }
-
         .footer-brand p {
             color: rgba(255,255,255,0.6);
-            font-size: 0.9rem;
+            font-size: 0.875rem;
+            margin-top: 1rem;
+            line-height: 1.7;
         }
 
         .footer-links h4 {
-            margin-bottom: 1rem;
-            font-size: 1rem;
+            font-size: 0.875rem;
+            font-weight: 600;
+            margin-bottom: 1.25rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
         }
 
         .footer-links ul {
@@ -646,321 +982,536 @@
         }
 
         .footer-links li {
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.625rem;
         }
 
         .footer-links a {
             color: rgba(255,255,255,0.6);
             text-decoration: none;
-            font-size: 0.9rem;
-            transition: color 0.3s ease;
+            font-size: 0.875rem;
+            transition: var(--transition);
         }
 
         .footer-links a:hover {
-            color: var(--white);
+            color: white;
         }
 
         .footer-bottom {
             border-top: 1px solid rgba(255,255,255,0.1);
             padding-top: 2rem;
-            text-align: center;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.8125rem;
             color: rgba(255,255,255,0.5);
-            font-size: 0.85rem;
+        }
+
+        .payment-icons {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .payment-icon {
+            width: 40px;
+            height: 25px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 4px;
+        }
+
+        /* Sticky Mobile Cart */
+        .sticky-cart {
+            display: none;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: var(--bg);
+            padding: 1rem 1.5rem;
+            box-shadow: 0 -4px 20px rgba(0,0,0,0.1);
+            z-index: 99;
+            border-top: 1px solid var(--border);
+        }
+
+        .sticky-cart-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .sticky-cart-price {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--secondary);
+        }
+
+        .sticky-cart-price span {
+            font-size: 0.875rem;
+            color: var(--text-light);
+            text-decoration: line-through;
+            margin-left: 0.5rem;
+            font-weight: 400;
+        }
+
+        .sticky-cart-btn {
+            flex: 1;
+            max-width: 200px;
+            padding: 0.875rem 1.5rem;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: var(--radius);
+            font-weight: 600;
+            font-size: 0.9375rem;
+            cursor: pointer;
         }
 
         /* Responsive */
-        @media (max-width: 968px) {
-            .hero-content {
+        @media (max-width: 1024px) {
+            .product-section {
                 grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .product-gallery {
+                position: relative;
+                top: 0;
+            }
+
+            .results-grid,
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .how-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .section-title {
+                font-size: 1.75rem;
+            }
+
+            .product-title {
+                font-size: 1.5rem;
+            }
+
+            .how-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .email-form {
+                flex-direction: column;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                gap: 1rem;
                 text-align: center;
             }
 
-            .hero h1 {
-                font-size: 2.25rem;
+            .sticky-cart {
+                display: block;
             }
 
-            .hero-subtitle {
-                margin-left: auto;
-                margin-right: auto;
-            }
-
-            .hero-features {
-                justify-content: center;
-            }
-
-            .cta-group {
-                justify-content: center;
-            }
-
-            .solution-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .solution-image {
-                order: -1;
+            .product-section {
+                padding-bottom: 100px;
             }
         }
 
         @media (max-width: 640px) {
-            .hero h1 {
-                font-size: 1.75rem;
+            .key-benefits {
+                grid-template-columns: 1fr;
             }
 
-            .hero-features {
-                flex-direction: column;
+            .trust-signals {
+                flex-wrap: wrap;
                 gap: 1rem;
-                align-items: center;
+                justify-content: center;
             }
 
-            .section-header h2 {
-                font-size: 1.75rem;
-            }
-
-            .guarantee-box {
-                padding: 2rem;
-            }
-
-            .trust-bar-content {
-                gap: 1.5rem;
+            .thumbnail-grid {
+                grid-template-columns: repeat(4, 1fr);
             }
         }
     </style>
 </head>
 <body>
+    <!-- Announcement Bar -->
+    <div class="announcement-bar">
+        Free Express Shipping on all Australian orders | <a href="#guarantee">60-Day Money Back Guarantee</a>
+    </div>
+
     <!-- Header -->
     <header>
         <nav>
-            <a href="#" class="logo">Red Light <span>Rejuve</span></a>
-            <a href="#shop" class="nav-cta">Shop Now</a>
+            <a href="/" class="logo">
+                <div class="logo-icon">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+                </div>
+                Red Light Rejuve
+            </a>
+            <div class="nav-links">
+                <a href="#results">Results</a>
+                <a href="#how-it-works">How It Works</a>
+                <a href="#reviews">Reviews</a>
+                <a href="#faq">FAQ</a>
+            </div>
+            <a href="#" class="nav-cart">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path></svg>
+            </a>
         </nav>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-content">
-            <div class="hero-text">
-                <span class="hero-badge">Australian Owned & Trusted</span>
-                <h1>Finally, an LED Mask That <span>Actually Works</span></h1>
-                <p class="hero-subtitle">Clinical-grade red light therapy you'll actually use. Comfortable fit, visible results in weeks, and a guarantee that means something.</p>
-                <div class="hero-features">
-                    <div class="hero-feature">
-                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                        <span>60-Day Money Back</span>
-                    </div>
-                    <div class="hero-feature">
-                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                        <span>Free AU Shipping</span>
-                    </div>
-                    <div class="hero-feature">
-                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                        <span>Results in 4 Weeks</span>
-                    </div>
-                </div>
-                <div class="cta-group">
-                    <a href="#shop" class="btn-primary">
-                        See Results
-                        <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
-                    </a>
-                    <a href="#how-it-works" class="btn-secondary">How It Works</a>
+    <!-- Product Section -->
+    <section class="product-section">
+        <!-- Product Gallery -->
+        <div class="product-gallery">
+            <div class="main-image">
+                <div class="main-image-placeholder">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                    <p>Product Image<br><small>LED Face Mask - Front View</small></p>
                 </div>
             </div>
-            <div class="hero-image">
-                <div class="hero-image-placeholder">
-                    <p>[Product Hero Image]<br>LED Face Mask in Use</p>
+            <div class="thumbnail-grid">
+                <div class="thumbnail active">Front</div>
+                <div class="thumbnail">Side</div>
+                <div class="thumbnail">Back</div>
+                <div class="thumbnail">In Use</div>
+            </div>
+        </div>
+
+        <!-- Product Info -->
+        <div class="product-info">
+            <div class="product-badges">
+                <span class="badge badge-bestseller">
+                    <svg fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                    Bestseller
+                </span>
+                <span class="badge badge-tga">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+                    TGA Listed
+                </span>
+            </div>
+
+            <h1 class="product-title">LED Light Therapy Face Mask</h1>
+
+            <div class="product-rating">
+                <span class="stars">★★★★★</span>
+                <span class="rating-text">4.9 (2,147 reviews) · <a href="#reviews">Read reviews</a></span>
+            </div>
+
+            <div class="product-price">
+                <span class="price-current">$349</span>
+                <span class="price-compare">$449</span>
+                <span class="price-save">Save $100</span>
+            </div>
+
+            <p class="afterpay-message">or 4 interest-free payments of <strong>$87.25</strong> with Afterpay</p>
+
+            <p class="product-description">
+                Clinical-grade red light therapy designed for real results. Our mask combines 633nm red light and 830nm near-infrared wavelengths at therapeutic intensity to boost collagen, reduce fine lines, and improve skin tone—all in just 10 minutes, 3x per week.
+            </p>
+
+            <div class="key-benefits">
+                <div class="key-benefit">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                    <span>Visible results in 4-8 weeks</span>
+                </div>
+                <div class="key-benefit">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                    <span>10-minute sessions</span>
+                </div>
+                <div class="key-benefit">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                    <span>Comfortable silicone fit</span>
+                </div>
+                <div class="key-benefit">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                    <span>Built-in eye protection</span>
+                </div>
+            </div>
+
+            <div class="add-to-cart-section">
+                <div class="quantity-selector">
+                    <span class="quantity-label">Quantity</span>
+                    <div class="quantity-controls">
+                        <button class="quantity-btn" onclick="decrementQty()">−</button>
+                        <input type="text" class="quantity-value" value="1" readonly id="qty-value">
+                        <button class="quantity-btn" onclick="incrementQty()">+</button>
+                    </div>
+                </div>
+                <button class="btn-add-to-cart">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path></svg>
+                    Add to Cart — $349
+                </button>
+            </div>
+
+            <div class="trust-signals">
+                <div class="trust-signal">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4"></path></svg>
+                    <span>Free Shipping</span>
+                </div>
+                <div class="trust-signal">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+                    <span>60-Day Guarantee</span>
+                </div>
+                <div class="trust-signal">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    <span>2-Year Warranty</span>
+                </div>
+                <div class="trust-signal">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                    <span>Ships from AU</span>
+                </div>
+            </div>
+
+            <div class="product-accordion">
+                <div class="accordion-item open">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        What's Included
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </div>
+                    <div class="accordion-content">
+                        <div class="accordion-body">
+                            <ul>
+                                <li>LED Light Therapy Face Mask</li>
+                                <li>USB-C Charging Cable</li>
+                                <li>Eye Protection Shields</li>
+                                <li>Storage Pouch</li>
+                                <li>Quick Start Guide</li>
+                                <li>2-Year Warranty Card</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        Specifications
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </div>
+                    <div class="accordion-content">
+                        <div class="accordion-body">
+                            <ul>
+                                <li><strong>Wavelengths:</strong> 633nm (Red) + 830nm (Near-Infrared)</li>
+                                <li><strong>LED Count:</strong> 120 medical-grade LEDs</li>
+                                <li><strong>Treatment Time:</strong> 10 minutes auto-shutoff</li>
+                                <li><strong>Material:</strong> Flexible silicone, BPA-free</li>
+                                <li><strong>Battery:</strong> Rechargeable, 5+ treatments per charge</li>
+                                <li><strong>Weight:</strong> 180g (ultra-lightweight)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        Shipping & Returns
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </div>
+                    <div class="accordion-content">
+                        <div class="accordion-body">
+                            <p><strong>Free Express Shipping</strong> on all Australian orders. Ships from Melbourne within 1-2 business days. Delivery in 2-5 business days Australia-wide.</p>
+                            <p style="margin-top: 0.75rem;"><strong>60-Day Money Back Guarantee:</strong> Try it risk-free. If you're not seeing results after 60 days of use, return it for a full refund. No questions asked, no restocking fees.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Trust Bar -->
-    <section class="trust-bar">
-        <div class="trust-bar-content">
-            <div class="trust-item">
-                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
-                <span>TGA Listed Device</span>
-            </div>
-            <div class="trust-item">
-                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                <span>10-Minute Sessions</span>
-            </div>
-            <div class="trust-item">
-                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
-                <span>Ships from Melbourne</span>
-            </div>
-            <div class="trust-item">
-                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg>
-                <span>2,000+ Happy Customers</span>
-            </div>
-        </div>
-    </section>
-
-    <!-- Problem Section -->
-    <section class="problem-section">
-        <div class="section-container">
+    <!-- Results Section -->
+    <section class="results-section" id="results">
+        <div class="results-container">
             <div class="section-header">
-                <span class="section-tag">Sound Familiar?</span>
-                <h2>You've Tried Everything. Nothing Sticks.</h2>
-                <p>We've heard it all. The expensive creams that sit in drawers. The masks that hurt. The products that overpromise and underdeliver.</p>
+                <p class="section-eyebrow">Clinical Results</p>
+                <h2 class="section-title">Real Results From Real Customers</h2>
+                <p class="section-subtitle">In an 8-week clinical study, 95% of users saw visible improvement in skin texture, fine lines, and overall radiance.</p>
             </div>
-            <div class="pain-points">
-                <div class="pain-card">
-                    <h3>"I have forehead wrinkles... I'm only 30."</h3>
-                    <p>You catch yourself in bright light and panic. When did this happen? You feel too young for this.</p>
-                    <span class="quote-source">- Real customer feedback</span>
-                </div>
-                <div class="pain-card">
-                    <h3>"I aged 10 years after having kids."</h3>
-                    <p>Sleep deprivation, no self-care time, and zero energy for complicated routines. You just want your glow back.</p>
-                    <span class="quote-source">- Real customer feedback</span>
-                </div>
-                <div class="pain-card">
-                    <h3>"I spent $600 and it just sits in my drawer."</h3>
-                    <p>The mask was uncomfortable. The straps pulled your hair. It hurt your eyes. So you stopped using it.</p>
-                    <span class="quote-source">- Real customer feedback</span>
-                </div>
-                <div class="pain-card">
-                    <h3>"How do I know this one actually works?"</h3>
-                    <p>You've been burned before. Influencer recommendations, overhyped claims, expensive regrets. You're skeptical for good reason.</p>
-                    <span class="quote-source">- Real customer feedback</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Solution Section -->
-    <section class="solution-section" id="how-it-works">
-        <div class="section-container">
-            <div class="solution-grid">
-                <div class="solution-content">
-                    <span class="section-tag">The Difference</span>
-                    <h2>Red Light Therapy That <span>You'll Actually Use</span></h2>
-                    <p>We designed our masks based on what real women told us they needed: comfort, simplicity, and results they can see.</p>
-                    <div class="solution-features">
-                        <div class="solution-feature">
-                            <div class="feature-icon">
-                                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                            </div>
-                            <div class="feature-text">
-                                <h4>Designed for Comfort</h4>
-                                <p>Soft silicone, adjustable straps that don't pull hair, and built-in eye protection. Wear it while you fold laundry.</p>
-                            </div>
-                        </div>
-                        <div class="solution-feature">
-                            <div class="feature-icon">
-                                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
-                            </div>
-                            <div class="feature-text">
-                                <h4>Clinical Wavelengths</h4>
-                                <p>Red (633nm) + Near-Infrared (830nm) light at therapeutic intensity. The same wavelengths used in professional clinics.</p>
-                            </div>
-                        </div>
-                        <div class="solution-feature">
-                            <div class="feature-icon">
-                                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                            </div>
-                            <div class="feature-text">
-                                <h4>10 Minutes, 3x Per Week</h4>
-                                <p>No complicated routines. Just 10 minutes while you do whatever you want. Visible improvements in 4-8 weeks.</p>
-                            </div>
-                        </div>
-                        <div class="solution-feature">
-                            <div class="feature-icon">
-                                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                            </div>
-                            <div class="feature-text">
-                                <h4>Real Support, Real People</h4>
-                                <p>Australian customer service that actually responds. Questions? We're here. Problems? We fix them.</p>
-                            </div>
-                        </div>
+            <div class="results-grid">
+                <div class="result-card">
+                    <div class="result-image">[Before/After Image 1]</div>
+                    <div class="result-content">
+                        <div class="result-stat">-32%</div>
+                        <div class="result-label">Reduction in Fine Lines</div>
+                        <p class="result-quote">"I've tried everything. This is the first thing that actually worked. My forehead lines are noticeably softer."</p>
                     </div>
                 </div>
-                <div class="solution-image">
-                    <p>[Product Feature Image]<br>Close-up of mask showing comfort features</p>
+                <div class="result-card">
+                    <div class="result-image">[Before/After Image 2]</div>
+                    <div class="result-content">
+                        <div class="result-stat">+47%</div>
+                        <div class="result-label">Improvement in Skin Firmness</div>
+                        <p class="result-quote">"After 6 weeks, my skin feels tighter and looks more lifted. My husband noticed before I even told him."</p>
+                    </div>
+                </div>
+                <div class="result-card">
+                    <div class="result-image">[Before/After Image 3]</div>
+                    <div class="result-content">
+                        <div class="result-stat">4 weeks</div>
+                        <div class="result-label">Average Time to See Results</div>
+                        <p class="result-quote">"I was skeptical, but by week 4 my skin had this glow that people started commenting on."</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Benefits Section -->
-    <section class="benefits-section">
-        <div class="section-container">
+    <!-- How It Works -->
+    <section class="how-section" id="how-it-works">
+        <div class="how-container">
             <div class="section-header">
-                <span class="section-tag" style="background: rgba(255,215,0,0.15); color: #FFD700; border: 1px solid rgba(255,215,0,0.3);">The Science</span>
-                <h2>What Red Light Actually Does</h2>
-                <p>Backed by over 3,000 peer-reviewed studies. Here's why it works.</p>
+                <p class="section-eyebrow">Simple Routine</p>
+                <h2 class="section-title">How It Works</h2>
+                <p class="section-subtitle">10 minutes, 3 times per week. That's it. No complicated routines, no expensive refills.</p>
             </div>
-            <div class="benefits-grid">
-                <div class="benefit-card">
-                    <div class="benefit-icon">
-                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
-                    </div>
-                    <h3>Boosts Collagen</h3>
-                    <p>Red light stimulates your cells' mitochondria to produce more ATP energy, increasing natural collagen production.</p>
+            <div class="how-grid">
+                <div class="how-step">
+                    <div class="step-number">1</div>
+                    <h3 class="step-title">Cleanse</h3>
+                    <p class="step-desc">Start with clean, dry skin. No serums or products needed—light penetrates best on bare skin.</p>
                 </div>
-                <div class="benefit-card">
-                    <div class="benefit-icon">
-                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg>
-                    </div>
-                    <h3>Reduces Fine Lines</h3>
-                    <p>Clinical studies show visible reduction in wrinkles and fine lines with consistent use over 4-8 weeks.</p>
+                <div class="how-step">
+                    <div class="step-number">2</div>
+                    <h3 class="step-title">Wear</h3>
+                    <p class="step-desc">Put on the mask and press the button. The adjustable straps fit any face shape comfortably.</p>
                 </div>
-                <div class="benefit-card">
-                    <div class="benefit-icon">
-                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
-                    </div>
-                    <h3>Improves Skin Tone</h3>
-                    <p>Evens out pigmentation and age spots by improving circulation and cellular turnover.</p>
+                <div class="how-step">
+                    <div class="step-number">3</div>
+                    <h3 class="step-title">Relax</h3>
+                    <p class="step-desc">Enjoy 10 minutes of treatment. Read, scroll, meditate—the mask auto-shuts off when done.</p>
                 </div>
-                <div class="benefit-card">
-                    <div class="benefit-icon">
-                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
-                    </div>
-                    <h3>Non-Invasive & Safe</h3>
-                    <p>No UV rays, no heat damage, no downtime. Just gentle therapeutic light that works with your skin's biology.</p>
+                <div class="how-step">
+                    <div class="step-number">4</div>
+                    <h3 class="step-title">Glow</h3>
+                    <p class="step-desc">Apply your favorite moisturizer. With consistent use, see visible results in 4-8 weeks.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Social Proof -->
-    <section class="social-proof">
-        <div class="section-container">
+    <!-- Testimonials -->
+    <section class="testimonials-section" id="reviews">
+        <div class="testimonials-container">
             <div class="section-header">
-                <span class="section-tag">Real Results</span>
-                <h2>What Our Customers Say</h2>
-                <p>Join thousands of Australian women who've found something that actually works.</p>
+                <p class="section-eyebrow">Customer Reviews</p>
+                <h2 class="section-title">Loved by 2,000+ Australians</h2>
+                <p class="section-subtitle">Don't just take our word for it. Here's what real customers are saying.</p>
             </div>
             <div class="testimonials-grid">
                 <div class="testimonial-card">
                     <div class="testimonial-stars">★★★★★</div>
-                    <p class="testimonial-text">"I was so skeptical after wasting money on other masks. But after 6 weeks, my husband asked what I was doing different. My skin looks glowing and I actually look forward to using it."</p>
+                    <p class="testimonial-text">"I was so skeptical after wasting money on other masks. But after 6 weeks, my husband asked what I was doing different. Finally something that works!"</p>
                     <div class="testimonial-author">
                         <div class="author-avatar">S</div>
-                        <div class="author-info">
-                            <h4>Sarah M.</h4>
-                            <p>Melbourne, VIC - Verified Buyer</p>
+                        <div>
+                            <div class="author-name">Sarah M.</div>
+                            <div class="author-meta">Melbourne, VIC · Verified Buyer</div>
                         </div>
                     </div>
                 </div>
                 <div class="testimonial-card">
                     <div class="testimonial-stars">★★★★★</div>
-                    <p class="testimonial-text">"As a new mum with zero time, I needed something simple. 10 minutes while I'm feeding the baby. My fine lines have definitely softened and I have some 'me time' again."</p>
+                    <p class="testimonial-text">"As a new mum with zero time, I needed something simple. 10 minutes while feeding the baby. My fine lines have softened and I have 'me time' again."</p>
                     <div class="testimonial-author">
                         <div class="author-avatar">J</div>
-                        <div class="author-info">
-                            <h4>Jessica T.</h4>
-                            <p>Sydney, NSW - Verified Buyer</p>
+                        <div>
+                            <div class="author-name">Jessica T.</div>
+                            <div class="author-meta">Sydney, NSW · Verified Buyer</div>
                         </div>
                     </div>
                 </div>
                 <div class="testimonial-card">
                     <div class="testimonial-stars">★★★★★</div>
-                    <p class="testimonial-text">"Finally a mask that's actually comfortable. No marks on my face, no hair pulling, and I can see while wearing it. The eye shields work perfectly. Worth every cent."</p>
+                    <p class="testimonial-text">"Finally a mask that's actually comfortable. No marks on my face, no hair pulling. The eye shields work perfectly. Worth every cent."</p>
                     <div class="testimonial-author">
                         <div class="author-avatar">M</div>
-                        <div class="author-info">
-                            <h4>Michelle K.</h4>
-                            <p>Brisbane, QLD - Verified Buyer</p>
+                        <div>
+                            <div class="author-name">Michelle K.</div>
+                            <div class="author-meta">Brisbane, QLD · Verified Buyer</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section" id="faq">
+        <div class="faq-container">
+            <div class="section-header">
+                <p class="section-eyebrow">Questions?</p>
+                <h2 class="section-title">Frequently Asked Questions</h2>
+            </div>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        How long until I see results?
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Most customers notice improvements in skin texture and radiance within 2-4 weeks of consistent use. More significant results like reduced fine lines and improved firmness typically appear around 6-8 weeks. Everyone's skin is different, which is why we offer a 60-day guarantee.
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        Is it safe for my eyes?
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Yes! Our mask includes medical-grade eye shields that block the light completely. The wavelengths we use (633nm and 830nm) are also extensively studied and considered safe. Simply keep your eyes closed during treatment and use the included shields for extra protection.
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        Can I use it with my skincare products?
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            For best results, use on clean, bare skin—light penetrates better without products blocking it. After your session, apply your serums and moisturizers as normal. Avoid using strong actives like retinol immediately before treatment if your skin is sensitive.
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        How does the 60-day guarantee work?
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            We want you to love your results. Use the mask as directed for up to 60 days. If you're not happy with your results, contact us for a full refund—no restocking fees, no hassle. We'll even cover return shipping within Australia.
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        How often should I use it?
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            For best results, use 3-5 times per week. Each session is just 10 minutes, and the mask auto-shuts off when complete. Consistency matters more than frequency—find a routine that works for your schedule and stick with it.
                         </div>
                     </div>
                 </div>
@@ -969,15 +1520,17 @@
     </section>
 
     <!-- Guarantee Section -->
-    <section class="guarantee-section">
-        <div class="section-container">
+    <section class="guarantee-section" id="guarantee">
+        <div class="guarantee-container">
             <div class="guarantee-box">
                 <div class="guarantee-content">
-                    <div class="guarantee-badge">✓</div>
-                    <h2>60-Day Results Guarantee</h2>
-                    <p>Use it as directed. If you don't see visible improvement in your skin within 60 days, we'll refund you in full. No restocking fees. No fine print. No hassle.</p>
-                    <a href="#shop" class="btn-primary" style="background: var(--accent); color: var(--secondary);">
-                        Try Risk-Free
+                    <div class="guarantee-badge">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+                    </div>
+                    <h2 class="guarantee-title">60-Day Results Guarantee</h2>
+                    <p class="guarantee-text">Try it completely risk-free. If you don't see visible improvement in your skin within 60 days, we'll refund you in full. No restocking fees. No fine print. Just results or your money back.</p>
+                    <a href="#" class="btn-guarantee">
+                        Shop Risk-Free
                         <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
                     </a>
                 </div>
@@ -985,56 +1538,131 @@
         </div>
     </section>
 
-    <!-- Final CTA -->
-    <section class="cta-section" id="shop">
-        <div class="section-container">
-            <h2>Ready to See Real Results?</h2>
-            <p>Join 2,000+ Australian women who've discovered the difference clinical-grade red light therapy makes.</p>
-            <a href="#" class="btn-primary">
-                Shop LED Masks
-                <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
-            </a>
+    <!-- Email Capture -->
+    <section class="email-section">
+        <div class="email-container">
+            <h2 class="email-title">Get 10% Off Your First Order</h2>
+            <p class="email-subtitle">Join 15,000+ subscribers for skincare tips, exclusive offers, and early access to new products.</p>
+            <form class="email-form" onsubmit="return false;">
+                <input type="email" class="email-input" placeholder="Enter your email">
+                <button type="submit" class="email-btn">Subscribe</button>
+            </form>
         </div>
     </section>
 
     <!-- Footer -->
     <footer>
-        <div class="footer-content">
-            <div class="footer-brand">
-                <a href="#" class="logo">Red Light <span>Rejuve</span></a>
-                <p>Australian-owned beauty technology bringing clinical-grade red light therapy to your home.</p>
+        <div class="footer-container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="/" class="logo" style="color: white;">
+                        <div class="logo-icon">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+                        </div>
+                        Red Light Rejuve
+                    </a>
+                    <p>Australian-owned beauty technology bringing clinical-grade red light therapy to your home. TGA listed, science-backed, results guaranteed.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Shop</h4>
+                    <ul>
+                        <li><a href="#">LED Face Mask</a></li>
+                        <li><a href="#">LED Panel</a></li>
+                        <li><a href="#">Accessories</a></li>
+                        <li><a href="#">Gift Cards</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Shipping Info</a></li>
+                        <li><a href="#">Returns</a></li>
+                        <li><a href="#">Track Order</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">The Science</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Reviews</a></li>
+                    </ul>
+                </div>
             </div>
-            <div class="footer-links">
-                <h4>Shop</h4>
-                <ul>
-                    <li><a href="#">LED Face Masks</a></li>
-                    <li><a href="#">LED Panels</a></li>
-                    <li><a href="#">Accessories</a></li>
-                    <li><a href="#">Bundles</a></li>
-                </ul>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Red Light Rejuve Pty Ltd. ABN 00 000 000 000. All rights reserved.</p>
+                <div class="payment-icons">
+                    <div class="payment-icon"></div>
+                    <div class="payment-icon"></div>
+                    <div class="payment-icon"></div>
+                    <div class="payment-icon"></div>
+                </div>
             </div>
-            <div class="footer-links">
-                <h4>Learn</h4>
-                <ul>
-                    <li><a href="#">How It Works</a></li>
-                    <li><a href="#">The Science</a></li>
-                    <li><a href="#">FAQs</a></li>
-                    <li><a href="#">Blog</a></li>
-                </ul>
-            </div>
-            <div class="footer-links">
-                <h4>Support</h4>
-                <ul>
-                    <li><a href="#">Contact Us</a></li>
-                    <li><a href="#">Shipping Info</a></li>
-                    <li><a href="#">Returns & Guarantee</a></li>
-                    <li><a href="#">Track Order</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2024 Red Light Rejuve. Australian Business. All rights reserved.</p>
         </div>
     </footer>
+
+    <!-- Sticky Mobile Cart -->
+    <div class="sticky-cart">
+        <div class="sticky-cart-content">
+            <div class="sticky-cart-price">$349 <span>$449</span></div>
+            <button class="sticky-cart-btn">Add to Cart</button>
+        </div>
+    </div>
+
+    <script>
+        // Quantity controls
+        function incrementQty() {
+            const input = document.getElementById('qty-value');
+            input.value = parseInt(input.value) + 1;
+            updateCartButton();
+        }
+
+        function decrementQty() {
+            const input = document.getElementById('qty-value');
+            if (parseInt(input.value) > 1) {
+                input.value = parseInt(input.value) - 1;
+                updateCartButton();
+            }
+        }
+
+        function updateCartButton() {
+            const qty = document.getElementById('qty-value').value;
+            const total = 349 * parseInt(qty);
+            document.querySelector('.btn-add-to-cart').innerHTML = `
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path></svg>
+                Add to Cart — $${total}
+            `;
+        }
+
+        // Product accordion
+        function toggleAccordion(header) {
+            const item = header.parentElement;
+            const wasOpen = item.classList.contains('open');
+
+            // Close all
+            document.querySelectorAll('.accordion-item').forEach(i => i.classList.remove('open'));
+
+            // Open clicked if it wasn't open
+            if (!wasOpen) {
+                item.classList.add('open');
+            }
+        }
+
+        // FAQ accordion
+        function toggleFaq(question) {
+            const item = question.parentElement;
+            item.classList.toggle('open');
+        }
+
+        // Thumbnail selection
+        document.querySelectorAll('.thumbnail').forEach(thumb => {
+            thumb.addEventListener('click', function() {
+                document.querySelectorAll('.thumbnail').forEach(t => t.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+    </script>
 </body>
 </html>
