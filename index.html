@@ -117,20 +117,15 @@
             text-transform: uppercase;
         }
 
-        .logo-icon {
-            width: 36px;
-            height: 36px;
-            background: var(--secondary);
-            border-radius: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        .logo-img {
+            height: 40px;
+            width: auto;
+            display: block;
         }
 
-        .logo-icon svg {
-            width: 20px;
-            height: 20px;
-            color: var(--accent);
+        .footer-logo {
+            filter: brightness(0) invert(1);
+            height: 36px;
         }
 
         .nav-links {
@@ -1394,10 +1389,7 @@
     <header>
         <nav>
             <a href="/" class="logo">
-                <div class="logo-icon">
-                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
-                </div>
-                Red Light Rejuve
+                <img src="assets/logo.jpeg" alt="Red Light Rejuve" class="logo-img">
             </a>
             <div class="nav-links">
                 <a href="#results">Results</a>
@@ -1786,11 +1778,8 @@
         <div class="footer-container">
             <div class="footer-grid">
                 <div class="footer-brand">
-                    <a href="/" class="logo" style="color: white;">
-                        <div class="logo-icon">
-                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
-                        </div>
-                        Red Light Rejuve
+                    <a href="/" class="logo">
+                        <img src="assets/logo.jpeg" alt="Red Light Rejuve" class="logo-img footer-logo">
                     </a>
                     <p>Australian-owned beauty technology bringing clinical-grade red light therapy to your home. TGA listed, science-backed, results guaranteed.</p>
                 </div>
