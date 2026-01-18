@@ -653,6 +653,55 @@
             letter-spacing: 0.01em;
         }
 
+        /* Timeline Grid (replaces results-grid) */
+        .timeline-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .timeline-card {
+            text-align: center;
+            padding: 2rem 1.5rem;
+            border: 1px solid var(--border);
+            background: var(--bg);
+        }
+
+        .timeline-week {
+            font-family: 'Josefin Sans', sans-serif;
+            font-size: 0.7rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--accent);
+            margin-bottom: 1rem;
+        }
+
+        .timeline-title {
+            font-family: 'Josefin Sans', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--secondary);
+            margin-bottom: 0.75rem;
+        }
+
+        .timeline-desc {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        .results-note {
+            text-align: center;
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: 1.1rem;
+            font-style: italic;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
         .results-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -1278,6 +1327,11 @@
                 gap: 2rem;
             }
 
+            .timeline-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1.5rem;
+            }
+
             .how-grid {
                 grid-template-columns: repeat(2, 1fr);
                 gap: 2rem;
@@ -1309,6 +1363,11 @@
             .how-grid {
                 grid-template-columns: 1fr;
                 gap: 1.5rem;
+            }
+
+            .timeline-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
             }
 
             .how-step {
@@ -1745,7 +1804,7 @@
             <p class="afterpay-message">or 4 interest-free payments of <strong>$87.25</strong> with Afterpay</p>
 
             <p class="product-description">
-                Clinical-grade red light therapy designed for real results. Our mask combines 633nm red light and 830nm near-infrared wavelengths at therapeutic intensity to boost collagen, reduce fine lines, and improve skin tone—all in just 10 minutes, 3x per week.
+                Clinical-grade red light therapy. 633nm red and 830nm near-infrared wavelengths at therapeutic intensity. Helps improve the appearance of fine lines, skin texture, and overall radiance. 10 minutes, 3 times per week.
             </p>
 
             <div class="key-benefits">
@@ -1854,40 +1913,37 @@
         </div>
     </section>
 
-    <!-- Results Section -->
+    <!-- SECTION 5: What Results Look Like (Expectations) -->
     <section class="results-section" id="results">
         <div class="results-container">
             <div class="section-header">
-                <p class="section-eyebrow">Clinical Results</p>
-                <h2 class="section-title">Real Results From Real Customers</h2>
-                <p class="section-subtitle">In an 8-week clinical study, 95% of users saw visible improvement in skin texture, fine lines, and overall radiance.</p>
+                <p class="section-eyebrow">What to Expect</p>
+                <h2 class="section-title">Realistic timelines. Honest expectations.</h2>
+                <p class="section-subtitle">Red light therapy works gradually. Most people notice improvements in skin texture and radiance within 4-8 weeks of consistent use.</p>
             </div>
-            <div class="results-grid">
-                <div class="result-card">
-                    <div class="result-image">[Before/After Image 1]</div>
-                    <div class="result-content">
-                        <div class="result-stat">-32%</div>
-                        <div class="result-label">Reduction in Fine Lines</div>
-                        <p class="result-quote">"I've tried everything. This is the first thing that actually worked. My forehead lines are noticeably softer."</p>
-                    </div>
+            <div class="timeline-grid">
+                <div class="timeline-card">
+                    <div class="timeline-week">Week 2</div>
+                    <h3 class="timeline-title">Subtle changes</h3>
+                    <p class="timeline-desc">Skin may feel slightly smoother. Some report a subtle glow after sessions. Too early for visible structural changes.</p>
                 </div>
-                <div class="result-card">
-                    <div class="result-image">[Before/After Image 2]</div>
-                    <div class="result-content">
-                        <div class="result-stat">+47%</div>
-                        <div class="result-label">Improvement in Skin Firmness</div>
-                        <p class="result-quote">"After 6 weeks, my skin feels tighter and looks more lifted. My husband noticed before I even told him."</p>
-                    </div>
+                <div class="timeline-card">
+                    <div class="timeline-week">Week 4</div>
+                    <h3 class="timeline-title">Early signs</h3>
+                    <p class="timeline-desc">Skin texture often improves. Fine lines may appear softer. This is when most people start noticing something different.</p>
                 </div>
-                <div class="result-card">
-                    <div class="result-image">[Before/After Image 3]</div>
-                    <div class="result-content">
-                        <div class="result-stat">4 weeks</div>
-                        <div class="result-label">Average Time to See Results</div>
-                        <p class="result-quote">"I was skeptical, but by week 4 my skin had this glow that people started commenting on."</p>
-                    </div>
+                <div class="timeline-card">
+                    <div class="timeline-week">Week 8</div>
+                    <h3 class="timeline-title">Visible improvement</h3>
+                    <p class="timeline-desc">Collagen stimulation shows results. Firmer-looking skin, reduced appearance of lines. Results vary by individual.</p>
+                </div>
+                <div class="timeline-card">
+                    <div class="timeline-week">Week 12+</div>
+                    <h3 class="timeline-title">Continued progress</h3>
+                    <p class="timeline-desc">Ongoing use maintains and enhances results. Many users report their best results after 3+ months of consistent use.</p>
                 </div>
             </div>
+            <p class="results-note">Individual results vary. The key is consistency. That's why we designed a mask comfortable enough to use regularly.</p>
         </div>
     </section>
 
