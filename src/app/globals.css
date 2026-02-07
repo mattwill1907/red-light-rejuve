@@ -1,72 +1,52 @@
-@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap');
 @import "tailwindcss";
 
 :root {
-  /* Luxury color palette - Deep Charcoal/Ivory/Gold (Aesop x LV inspired) */
-  --primary: #2C2C2C;
-  --primary-dark: #1A1A1A;
-  --primary-light: #3D3D3D;
-  --secondary: #1A1A1A;
-  --secondary-dark: #0D0D0D;
-  --accent: #C9A962;
-  --accent-light: #D4B87A;
-  --red-accent: #8B4049;
-  --success: #4A6B5A;
-  --text: #1A1A1A;
-  --text-secondary: #5C5C5C;
-  --text-light: #8A8A8A;
-  --border: #E5E5E5;
-  --bg: #FAFAFA;
-  --bg-secondary: #F5F5F5;
-  --bg-tertiary: #EFEFEF;
+  /* Soft Rose palette */
+  --primary: #D4899B;           /* Dusty rose */
+  --primary-dark: #B8707E;      /* Deep rose */
+  --primary-light: #E8A8B8;     /* Light rose */
+  --primary-fade: rgba(212, 137, 155, 0.08);
+
+  /* Neutrals */
+  --text: #0a0808;              /* Near black */
+  --text-secondary: #2f2f2f;    /* Dark gray */
+  --text-light: #6b6b6b;        /* Medium gray */
+  --border: #e5e5e5;            /* Light border */
+  --bg: #ffffff;                /* Pure white */
+  --bg-secondary: #f7f7f7;      /* Off white */
+  --bg-tertiary: #f0f0f0;       /* Light gray */
+
+  /* Semantic */
+  --success: #D4899B;
+  --error: #e53935;
+
+  /* Fonts */
+  --font-sans: var(--font-poppins), system-ui, sans-serif;
 }
 
 @theme inline {
-  --color-primary: var(--primary);
-  --color-primary-dark: var(--primary-dark);
-  --color-secondary: var(--secondary);
-  --color-secondary-dark: var(--secondary-dark);
-  --color-accent: var(--accent);
-  --color-red-accent: var(--red-accent);
-  --color-text: var(--text);
-  --color-text-secondary: var(--text-secondary);
-  --color-text-light: var(--text-light);
-  --color-border: var(--border);
-  --color-bg: var(--bg);
-  --color-bg-secondary: var(--bg-secondary);
-  --color-bg-tertiary: var(--bg-tertiary);
-  --font-serif: 'Cormorant Garamond', Georgia, serif;
-  --font-sans: 'Josefin Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --color-background: var(--bg);
+  --color-foreground: var(--text);
+  --font-sans: var(--font-poppins);
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+  font-weight: 400;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-sans);
+  font-weight: 600;
 }
 
 html {
   scroll-behavior: smooth;
 }
 
-body {
-  font-family: 'Josefin Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-  line-height: 1.7;
-  color: var(--text);
-  background: var(--bg);
-  -webkit-font-smoothing: antialiased;
-  letter-spacing: 0.02em;
-  font-weight: 400;
-}
-
-/* LV-style editorial serif for headings */
-h1, h2, h3 {
-  font-family: 'Cormorant Garamond', Georgia, serif;
-  font-weight: 500;
-  letter-spacing: 0.03em;
-}
-
-/* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
 }
@@ -76,10 +56,134 @@ h1, h2, h3 {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--border);
-  border-radius: 0;
+  background: var(--primary);
+  border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--text-light);
+  background: var(--primary-dark);
+}
+
+/* Fade in on scroll animation */
+.fade-in-section {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in-section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Staggered children animation */
+.fade-in-section.visible .stagger-child {
+  animation: fadeInUp 0.5s ease-out forwards;
+}
+
+.stagger-child {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.stagger-child:nth-child(1) { animation-delay: 0.1s; }
+.stagger-child:nth-child(2) { animation-delay: 0.2s; }
+.stagger-child:nth-child(3) { animation-delay: 0.3s; }
+.stagger-child:nth-child(4) { animation-delay: 0.4s; }
+.stagger-child:nth-child(5) { animation-delay: 0.5s; }
+.stagger-child:nth-child(6) { animation-delay: 0.6s; }
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Button styles */
+.btn-primary {
+  background: var(--primary);
+  color: white;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  transition: background 0.2s ease-out, transform 0.2s ease-out;
+}
+
+.btn-primary:hover {
+  background: var(--primary-dark);
+  transform: translateY(-2px);
+}
+
+/* Subheading style */
+.subheading {
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--primary-dark);
+}
+
+/* Marquee animation for trust badges */
+.marquee-container {
+  overflow: hidden;
+  width: 100%;
+}
+
+.marquee-content {
+  display: flex;
+  animation: marquee 20s linear infinite;
+  width: fit-content;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Hide scrollbar for swipe sliders */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Swipe slider smooth scrolling */
+.swipe-slider {
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Spin wheel animations */
+@keyframes confetti-fall {
+  0% {
+    transform: translateY(0) rotate(0deg) scale(1);
+    opacity: 1;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(400px) rotate(720deg) scale(0.3);
+    opacity: 0;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
 }
