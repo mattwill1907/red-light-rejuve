@@ -95,9 +95,6 @@ export default function Home() {
                 Without injectables. Without complicated routines. Just 10 minutes, 3 times a week.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 mb-8">
-                <Link href="#product" className="inline-flex items-center justify-center px-8 py-4 bg-[var(--secondary)] text-white text-[0.75rem] font-medium tracking-[0.15em] uppercase hover:bg-[var(--primary-light)] transition-colors">
-                  Discover the Mask
-                </Link>
                 <Link href="#how-it-works" className="inline-flex items-center justify-center px-8 py-4 border border-[var(--secondary)] text-[var(--secondary)] text-[0.75rem] font-medium tracking-[0.15em] uppercase hover:bg-[var(--secondary)] hover:text-white transition-colors">
                   See How It Works
                 </Link>
@@ -420,41 +417,6 @@ export default function Home() {
             <Link href="#" className="text-[0.75rem] font-medium tracking-[0.12em] uppercase text-white/70 hover:text-white transition-colors border-b border-white/30 pb-1">
               Read All 2,147 Reviews
             </Link>
-          </div>
-        </Container>
-      </section>
-
-      {/* What We Fixed Section */}
-      <section className="py-16 md:py-24 bg-[var(--bg)]">
-        <Container>
-          <div className="text-center mb-12">
-            <p className="text-[0.7rem] font-medium tracking-[0.2em] uppercase text-[var(--accent)] mb-4">The Difference</p>
-            <h2 className="font-[family-name:var(--font-cormorant)] text-3xl md:text-4xl font-normal text-[var(--secondary)]">
-              What we fixed.
-            </h2>
-          </div>
-          <div className="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto">
-            {[
-              { pain: "Straps hurt and snag hair", solution: "No straps. Flexible silicone wraps naturally." },
-              { pain: "Light burns my eyes", solution: "Built-in eye protection. No goggles needed." },
-              { pain: "Uncomfortable pressure on face", solution: "Ultra-light at 180g. Barely feel it." },
-              { pain: "Broke after 6 months", solution: "2-year warranty. Australian support." },
-            ].map((item, i) => (
-              <div key={i} className="flex gap-4 p-5 border border-[var(--border)] bg-[var(--bg)]">
-                <div className="flex-shrink-0 w-8 h-8 flex items-center justify-center">
-                  <svg className="w-4 h-4 text-[var(--text-light)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M6 18L18 6M6 6l12 12" />
-                  </svg>
-                </div>
-                <div>
-                  <p className="text-[0.8rem] text-[var(--text-light)] line-through mb-1">&ldquo;{item.pain}&rdquo;</p>
-                  <p className="text-[0.9rem] text-[var(--text)] flex items-center gap-2">
-                    <span className="text-[var(--accent)]"><CheckIcon /></span>
-                    {item.solution}
-                  </p>
-                </div>
-              </div>
-            ))}
           </div>
         </Container>
       </section>
