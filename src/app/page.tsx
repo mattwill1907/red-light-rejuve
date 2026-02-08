@@ -411,12 +411,14 @@ export default function Home() {
                 <span className="text-white/90 text-sm">2,147+ happy customers</span>
               </div>
               <h1 className="text-3xl font-bold leading-tight mb-3">
-                TIRED OF LOOKING TIRED?
+                Stop Aging Anxiety. Firm Your Skin.
               </h1>
-              <p className="text-base text-white/90 mb-4">10 Minutes. 3x a week. Zero Needles.</p>
-              <h2 className="text-2xl font-bold leading-tight">
-                <span className="font-extrabold">BETTER SKIN</span> DOESN&apos;T HAVE<br />TO BE COMPLICATED.
-              </h2>
+              <p className="text-base text-white/90 mb-4">Professional Results for Busy Women. The 10-minute clinic glow.</p>
+              <ul className="mt-4 space-y-2 text-sm text-white/90">
+  <li className="flex items-start gap-2"><span className="mt-0.5 inline-flex h-5 w-5 items-center justify-center rounded-full bg-emerald-500 text-white text-[12px] leading-none">✓</span><span><span className="font-semibold">Visible Firming:</span> Smooths lines in 4 weeks.</span></li>
+  <li className="flex items-start gap-2"><span className="mt-0.5 inline-flex h-5 w-5 items-center justify-center rounded-full bg-emerald-500 text-white text-[12px] leading-none">✓</span><span><span className="font-semibold">Contoured Fit:</span> No slipping or nose dents.</span></li>
+  <li className="flex items-start gap-2"><span className="mt-0.5 inline-flex h-5 w-5 items-center justify-center rounded-full bg-emerald-500 text-white text-[12px] leading-none">✓</span><span><span className="font-semibold">Eye-Safe:</span> Built-in shields protect vision.</span></li>
+</ul>
             </FadeInSection>
           </div>
         </div>
@@ -430,12 +432,14 @@ export default function Home() {
                 <span className="text-sm text-[var(--text-light)]">2,147+ happy customers</span>
               </div>
               <h1 className="text-4xl lg:text-5xl font-bold leading-tight mb-6 text-[var(--text)]">
-                TIRED OF LOOKING TIRED?
+                Stop Aging Anxiety. Firm Your Skin.
               </h1>
-              <p className="text-lg text-[var(--text-secondary)] mb-6">10 Minutes. 3x a week. Zero Needles.</p>
-              <h2 className="text-2xl lg:text-3xl font-bold leading-tight mb-6 text-[var(--text)]">
-                <span className="font-extrabold">BETTER SKIN</span> DOESN&apos;T HAVE TO BE COMPLICATED.
-              </h2>
+              <p className="text-lg text-[var(--text-secondary)] mb-6">Professional Results for Busy Women. The 10-minute clinic glow.</p>
+              <ul className="space-y-3 mb-8">
+  <li className="text-sm text-[var(--text-secondary)] flex items-start gap-2"><span className="mt-0.5 inline-flex h-5 w-5 items-center justify-center rounded-full bg-emerald-500 text-white text-[12px] leading-none">✓</span><span><span className="font-semibold">Visible Firming:</span> Smooths lines in 4 weeks.</span></li>
+  <li className="text-sm text-[var(--text-secondary)] flex items-start gap-2"><span className="mt-0.5 inline-flex h-5 w-5 items-center justify-center rounded-full bg-emerald-500 text-white text-[12px] leading-none">✓</span><span><span className="font-semibold">Contoured Fit:</span> No slipping or nose dents.</span></li>
+  <li className="text-sm text-[var(--text-secondary)] flex items-start gap-2"><span className="mt-0.5 inline-flex h-5 w-5 items-center justify-center rounded-full bg-emerald-500 text-white text-[12px] leading-none">✓</span><span><span className="font-semibold">Eye-Safe:</span> Built-in shields protect vision.</span></li>
+</ul>
               <p className="text-sm text-[var(--text-secondary)] mb-8 flex items-center gap-2">
                 <span className="text-[var(--primary-dark)]">✓</span>
                 60-Day Money-Back Guarantee — Love it or return it, no questions asked
